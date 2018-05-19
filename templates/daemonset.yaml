@@ -32,6 +32,9 @@ spec:
             - name: storage
               containerPort: 2380
               protocol: TCP
+            - name: agent
+              containerPort: 8081
+              protocol: TCP
           command: ["sensu-backend"]
           args: ["start"]
           # livenessProbe:

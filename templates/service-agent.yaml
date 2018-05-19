@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "sensu-go-helm.fullname" . }}-agent
+  labels:
+    app: {{ template "sensu-go-helm.name" . }}
+    chart: {{ template "sensu-go-helm.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.agent.port }}
+      targetPort: 8081
+      protocol: TCP
+      name: agent
+  selector:
+    app: {{ template "sensu-go-helm.name" . }}
+    release: {{ .Release.Name }}
