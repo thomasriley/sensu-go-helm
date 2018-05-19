@@ -1,0 +1,14 @@
+apiVersion: v1
+appVersion: "1.0"
+description: A Helm chart Sensu (GoLang)
+name: sensu-go-helm
+version: 0.1.0
+sources:
+  - https://github.com/sensu/sensu-go
+keyworks:
+  - sensu
+  - monitoring
+maintainers:
+  - name: Sensu Community
+    email: support@sensuapp.com
+    url: https://sensu.io/resources/community
